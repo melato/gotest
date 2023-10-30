@@ -1,4 +1,4 @@
-name: Build
+name: Go Releaser
 
 on:
   push:
@@ -17,14 +17,13 @@ jobs:
       with:
         go-version: '1.21'
 
-    - name: Build
-      run: go build -C main -ldflags "-X 'main.version=$(date)'" ./gotest.go
-
-    - name: Print Version
-      run: main/gotest > VERSION
+    - name: Run GoReleaser
+      uses: goreleaser/goreleaser-action@v5
+      with:
+        version: latest
+        args: release --clean --snapshot --skip=sign
 
     - uses: actions/upload-artifact@v3
       with:
-        name: Artifacts
-        path: |
-          VERSION
+        name: Binaries
+        path: dist/hcloud-*/hcloud

@@ -1,0 +1,30 @@
+builds:
+  - id: gotest-build
+    main: ./main/gotest.go
+    binary: gotest
+    ldflags:
+      - -X 'main.version={{.Version}}'
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+
+checksum:
+  name_template: checksums.txt
+  algorithm: sha256
+
+archives:
+  - id: gotest-archive
+    builds:
+      - gotest-build
+    name_template: "{{ .Binary }}-{{ .Os }}-{{ .Arch }}"
+
+    files:
+      - LICENSE
+      - README.md
+
+release:
+  draft: false
