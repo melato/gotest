@@ -1,0 +1,22 @@
+name: Variables
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Print Something
+      run: echo test > V1
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Upload Artifacts
+        path: |
+          V1
