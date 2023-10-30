@@ -26,4 +26,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Binaries
-        path: dist/hcloud-*/hcloud
+        path: dist/gotest-*/gotest
