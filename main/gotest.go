@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+
+	"melato.org/gotest/internal/version"
 )
 
 func main() {
-	fmt.Println("hello gotest")
+	fmt.Println(version.Version)
 }
