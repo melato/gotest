@@ -13,10 +13,10 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Print Something
-      run: echo $GITHUB_REF > V1
+      run: echo $GITHUB_SHA > V1
 
     - uses: actions/upload-artifact@v3
       with:
-        name: Upload Artifacts
+        name: Artifacts
         path: |
           V1
