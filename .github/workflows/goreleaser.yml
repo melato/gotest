@@ -23,7 +23,12 @@ jobs:
         version: latest
         args: release --clean --snapshot --skip=sign
 
+    - name: LS
+      run: ls -lR > LS
+
     - uses: actions/upload-artifact@v3
       with:
-        name: Binaries
-        path: dist/gotest-*/gotest
+        name: Artifacts
+        path: |
+          dist/
+          LS
