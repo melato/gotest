@@ -1,2 +1,2 @@
 
-go build -ldflags "-w -X melato.org/gotest/internal/version.Version=test" gotest.go
+go build -ldflags "-X 'main.version=$(date -u '+%Y-%m-%d %H:%M:%S')'" gotest.go

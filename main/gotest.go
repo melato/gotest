@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-
-	"melato.org/gotest/internal/version"
 )
 
+// version is set via compiler flags
+var version = "unknown"
+
 func main() {
-	fmt.Println(version.Version)
+	fmt.Println(version)
 }
