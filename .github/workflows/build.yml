@@ -20,7 +20,11 @@ jobs:
     - name: Build
       run: go build -C main ./gotest.go
 
+    - name: Print Version
+      run: main/gotest > VERSION
+
     - uses: actions/upload-artifact@v3
       with:
         name: Upload Artifacts
         path: main/gotest
+        path: VERSION
