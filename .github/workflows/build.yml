@@ -26,5 +26,6 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Upload Artifacts
-        path: main/gotest
-        path: VERSION
+        path: |
+          main/gotest
+          VERSION
