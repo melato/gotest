@@ -1,0 +1,1 @@
+Test github releases of a Go program.
